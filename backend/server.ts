@@ -6,6 +6,7 @@ import cors from 'cors';
 import { clerkMiddleware, getAuth } from '@clerk/express';
 
 import eventsRouter from './app/api/events';
+import upgradeTierRouter from './app/upgrade-tier';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -33,6 +34,7 @@ console.log("🔑 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:", process.env.NEXT_PUBLIC_C
 
 // Mount routers
 app.use('/api/events', eventsRouter);
+app.use('/upgrade-tier', upgradeTierRouter);
 
 // Start the server
 app.listen(PORT, () => {
