@@ -12,12 +12,12 @@ type Props = {
   userTier: 'free' | 'silver' | 'gold' | 'platinum';
 };
 
-const tierPriority = {
-  free: 0,
-  silver: 1,
-  gold: 2,
-  platinum: 3,
-};
+// const tierPriority = {
+//   free: 0,
+//   silver: 1,
+//   gold: 2,
+//   platinum: 3,
+// };
 
 const tierColors = {
   free: 'bg-green-100 text-green-800',

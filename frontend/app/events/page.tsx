@@ -14,7 +14,7 @@ export default async function EventsPage() {
     redirect('/sign-in');
   }
 
-    const tier = ((sessionClaims?.publicMetadata as { tier?: Tier })?.tier) ?? 'free';
+    // const tier = ((sessionClaims?.publicMetadata as { tier?: Tier })?.tier) ?? 'free';
 
 
   return (
