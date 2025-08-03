@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import EventList from '@/components/EventList';
 import type { Event } from '@/types';
 import { useUser, useAuth } from '@clerk/nextjs';
+import UpgradeTierButton from '@/components/UpgradeButton'; 
 
 type ApiResponse = {
   events: Event[];
@@ -65,7 +66,14 @@ export default function ServerEventList() {
 
   return (
     <div className="space-y-4">
-      
+      {/* 🟡 Notice for non-platinum users */}
+      {userTier !== 'platinum' && (
+        <div className="text-sm text-yellow-800 bg-yellow-100 p-3 rounded-lg border border-yellow-300 text-center">
+          You're on the <strong>{userTier}</strong> tier. Upgrade to unlock more events!
+        </div>
+      )}
+
+      <UpgradeTierButton onUpgrade={fetchEvents} />
 
       <EventList events={events} userTier={userTier} />
     </div>
