@@ -3,6 +3,7 @@
   "main": "server.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn server.ts",
+    "build": "tsc",
     "start": "tsc && node dist/server.js"
   },
   "dependencies": {
